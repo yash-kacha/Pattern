@@ -70,6 +70,17 @@ public class Logic2 {
             case 'X' -> X();
             case 'Y' -> Y();
             case 'Z' -> Z();
+            case '1' -> one();
+            case '2' -> two();
+            case '3' -> three();
+            case '4' -> four();
+            case '5' -> five();
+            case '6' -> six();
+            case '7' -> seven();
+            case '8' -> eight();
+            case '9' -> nine();
+            case '0' -> zero();
+
             default -> {
                 System.out.println("Invalid character: ");
                 yield Space();
@@ -296,6 +307,7 @@ public class Logic2 {
 
                 System.out.print(i + "" + j + " ");
             }
+            System.out.println();
             ans[i] = temp1;
         }
         return ans;
@@ -416,7 +428,7 @@ public class Logic2 {
         for (int i = 0; i < size; i++) {
             String temp1 = "";
             for (int j = 0; j < size; j++) {
-                if ((i == 0 && j == 0) || (i == size / 2 && j == size - 1 || (i == size - 1 && j == size - 1))) {
+                if ((i == 0 && j == 0) || (i == size / 2 && j == size - 1) || (i == size - 1 && j == size - 1) || (i == size / 2 && j == 0)) {
                     temp1 += " ";
                 } else if ((i == 0) || (i == size / 2) || (i == size - 1) || (j == 0 && i < size / 2) || (j == size - 1 && i > size / 2)) {
                     temp1 += ch;
@@ -544,5 +556,187 @@ public class Logic2 {
         return ans;
     }
 
+    public String[] one() {
+        String[] ans = new String[size];
+        for (int i = 0; i < size; i++) {
+            String temp1 = "";
+            for (int j = 0; j < size; j++) {
+                if ((j == size / 2) || (i == size - 1) || (i + j == size / 2 && i < size / 2)) {
+                    temp1 += ch;
+                } else {
+                    temp1 += " ";
+                }
+            }
+            ans[i] = temp1;
+        }
+        return ans;
+    }
 
+    public String[] two() {
+        String[] ans = new String[size];
+        for (int i = 0; i < size; i++) {
+            String temp1 = "";
+            for (int j = 0; j < size; j++) {
+
+                if ((i == 0) || (i == size / 2) || (i == size - 1) || (j == 0 && i > size / 2) || (j == size - 1 && i < size / 2)) {
+                    temp1 += ch;
+                } else {
+                    temp1 += " ";
+                }
+            }
+            ans[i] = temp1;
+        }
+        return ans;
+    }
+
+    public String[] three() {
+        String[] ans = new String[size];
+        for (int i = 0; i < size; i++) {
+            String temp1 = "";
+            for (int j = 0; j < size; j++) {
+                if((i==0 && j==size-1)||(i==size/2 && j==size-1) || (i==size-1 && j==size-1))
+                {
+                    temp1 += " ";
+                }
+                else if ((i == 0) || (i == size / 2) || (i == size - 1) || (j == size - 1)) {
+                    temp1 += ch;
+                } else {
+                    temp1 += " ";
+                }
+            }
+            ans[i] = temp1;
+        }
+        return ans;
+    }
+
+    public String[] four() {
+        String[] ans = new String[size];
+        for (int i = 0; i < size; i++) {
+            String temp1 = "";
+            for (int j = 0; j < size; j++) {
+
+                if ((j == 0 && i < size / 2) || (i == size / 2) || (j == (int) (size * .7))) {
+                    temp1 += ch;
+                } else {
+                    temp1 += " ";
+                }
+            }
+            ans[i] = temp1;
+        }
+        return ans;
+    }
+
+    public String[] five() {
+        String[] ans = new String[size];
+        for (int i = 0; i < size; i++) {
+            String temp1 = "";
+            for (int j = 0; j < size; j++) {
+
+                if ((i == 0) || (i == size / 2) || (i == size - 1) || (j == 0 && i < size / 2) || (j == size - 1 && i > size / 2)) {
+                    temp1 += ch;
+                } else {
+                    temp1 += " ";
+                }
+            }
+            ans[i] = temp1;
+        }
+        return ans;
+    }
+
+    public String[] six() {
+        String[] ans = new String[size];
+        for (int i = 0; i < size; i++) {
+            String temp1 = "";
+            for (int j = 0; j < size; j++) {
+
+
+                if ((i == 0 && j == 0) || (i == size / 2 && j == size - 1) || (i == size - 1 && j == size - 1) ||(i==size-1 && j==0)) {
+                    temp1 += " ";
+                } else if ((i == 0) || (i == size / 2) || (i == size - 1) || (j == 0) || (j == size - 1 && i > size / 2)) {
+                    temp1 += ch;
+                } else {
+                    temp1 += " ";
+                }
+
+
+            }
+            ans[i] = temp1;
+        }
+        return ans;
+    }
+
+    public String[] seven() {
+        String[] ans = new String[size];
+        for (int i = 0; i < size; i++) {
+            String temp1 = "";
+            for (int j = 0; j < size; j++) {
+
+                if ((i == 0) || (i + j == size - 1)) {
+                    temp1 += ch;
+                } else {
+                    temp1 += " ";
+                }
+            }
+            ans[i] = temp1;
+        }
+        return ans;
+    }
+
+    public String[] eight() {
+        String[] ans = new String[size];
+        for (int i = 0; i < size; i++) {
+            String temp1 = "";
+            for (int j = 0; j < size; j++) {
+
+                if ((i == 0 && j == 0) || (i == 0 && j == size - 1)|| (i == size / 2 && j == size - 1) || (i == size / 2 && j == 0) || (i == size - 1 && j == size - 1) ||(i==size-1 && j==0)) {
+                    temp1 += " ";
+                } else if ((i == 0) || (i == size / 2) || (i == size - 1) || (j == 0) || (j == size - 1)) {
+                    temp1 += ch;
+                } else {
+                    temp1 += " ";
+                }
+
+            }
+            ans[i] = temp1;
+        }
+        return ans;
+    }
+
+    public String[] nine() {
+        String[] ans = new String[size];
+        for (int i = 0; i < size; i++) {
+            String temp1 = "";
+            for (int j = 0; j < size; j++) {
+
+                if ((i==0 &&j==0)||(i == 0 && j == size - 1) || ((j == 0) && (i == size / 2))) {
+                    temp1 += " ";
+            }else if ((j == size-1) || (j == 0) && (i <= size / 2) || (i == 0) || (i == size / 2)) {
+                    temp1 += ch;
+                } else {
+                    temp1 += " ";
+                }
+            }
+            ans[i] = temp1;
+        }
+        return ans;
+    }
+
+    public String[] zero() {
+        String[] ans = new String[size];
+        for (int i = 0; i < size; i++) {
+            String temp1 = "";
+            for (int j = 0; j < size; j++) {
+
+                if ((i == 0 && j == 0)||(i == size - 1 && j == size - 1) || (i == 0 && j == size - 1) || (i == size-1 && j == 0)) {
+                    temp1 += " ";
+                } else if ((i == 0) || (i == size - 1) || (j == 0) || (j == size - 1)) {
+                    temp1 += ch;
+                } else {
+                    temp1 += " ";
+                }
+            }
+            ans[i] = temp1;
+        }
+        return ans;
+    }
 }
